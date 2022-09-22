@@ -10,6 +10,7 @@ exports.addProject = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       error,
+      message: "Provided objectId is not exist in employee database",
     });
   }
 };
@@ -36,7 +37,7 @@ exports.updateProject = async (req, res) => {
         if (error) {
           return res.status(400).json({
             message: "Unable to update Project",
-            error,
+            reason: "Provided objectId is not exist in employee database",
           });
         }
         return res.status(200).json({
