@@ -7,7 +7,7 @@ app.use(express.json());
 
 //DB connection
 mongoose.connect(process.env.DATABASE).then(() => {
-  console.log("Database connected");
+  console.log("Database connected success");
 });
 //All the routes
 app.use("/", allRoutes);
